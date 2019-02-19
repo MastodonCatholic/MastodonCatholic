@@ -5,17 +5,51 @@ body, html {
    font-family: 'Copperplate Gothic Light';
    color: white;
 }
-#bgimage {
-   background-image: url("Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg");
-   position: relative;
+
+
+.bg {
+   position: absolute;
    /* Full height */
    height: 100%; 
+   width: 100%;
 
    /* Center and scale the image nicely */
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+
+   opacity:0; 
+   animation-name: fade; 
+   animation-duration: 12s; 
+   animation-iteration-count: infinite; 
 }
+
+#bgimage1 {
+   background-image: url("Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg");
+   animation-delay: 0s;
+}
+#bgimage2 {
+   background-image: url("00.159.220_PS2.jpg");
+   animation-delay: 3s;
+}
+#bgimage3 {
+   background-image: url("00.159.223_PS1.jpg");
+   animation-delay: 6s;
+}
+#bgimage4 {
+   background-image: url("1ea2068d15476c63af1a4ef602d03f88 (1).jpg");
+   animation-delay: 9s;
+   background-blend-mode: darken;
+}
+
+@keyframes fade {
+   0%   { opacity: 0; }
+   11.11%   { opacity: 1; }
+   33.33%  { opacity: 1; }
+   44.44%  { opacity: 0; }
+   100% { opacity: 0; }
+ }
+
 #text
 {
    position: absolute;
@@ -23,11 +57,12 @@ body, html {
    width: 100%;
    justify-content: center;
 }
+
 #CatholicMass {
    font-size: 50pt;
    text-decoration: underline;
 }
-#MassTime {
+.MassTime {
    font-size: 20pt;
 }
 body {
@@ -45,14 +80,18 @@ body {
     top:                 -50%; /* to anchor at the top center point (as opposed to true center) set this to 0 or remove it all together */
 }
 
-.anchor
-{
-    position:            absolute; /* (or relative, never static) */
-}
-
 #qr
 {
     /* any positioning and dimensioning properties for element 2 should go here */
+    position:            absolute; /* (or relative, never static) */
+    left:                85%;
+    top:                 85%;
+    width:               15%;
+    height: 15%;
+}
+
+#qrtext {
+   position:            relative; /* (or relative, never static) */
     left:                85%;
     top:                 85%;
     width:               15%;
