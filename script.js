@@ -23,7 +23,7 @@ var Dec = 11;
 //app id = 3bce3124-41e9-445d-9aff-a3b90b7de430
 
 /* set up XMLHttpRequest */
-var url = "https://cors-escape.herokuapp.com/https://jy4pja.dm.files.1drv.com/y4mRryyUBbyj6zi2MkfR2TQ_Xk8kBcBNGfxC7N626TdxSx5r3i_wrOHDqEYDShTroys7--SM0koCKvhdU77FzDXolA_uotPD20akvB34PI963fUwxnPOj9erJSUALSNkcNLRup_ZMbguoFsxkxsztUwIKijGtkJ1t4RbMZr2IX22kcaehVNvyZNPpdWkuV52hZD/spring%20mass%20events.xlsx?download&psid=1";
+var url = "https://cors-anywhere.herokuapp.com/https://jy4pja.dm.files.1drv.com/y4mRryyUBbyj6zi2MkfR2TQ_Xk8kBcBNGfxC7N626TdxSx5r3i_wrOHDqEYDShTroys7--SM0koCKvhdU77FzDXolA_uotPD20akvB34PI963fUwxnPOj9erJSUALSNkcNLRup_ZMbguoFsxkxsztUwIKijGtkJ1t4RbMZr2IX22kcaehVNvyZNPpdWkuV52hZD/spring%20mass%20events.xlsx?download&psid=1";
 var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
