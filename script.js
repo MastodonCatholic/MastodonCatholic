@@ -1,4 +1,4 @@
- var today = new Date();
+var today = new Date();
 
 var el = document.getElementById('room');
 
@@ -17,6 +17,49 @@ var Oct = 9;
 var Nov = 10;
 var Dec = 11;
 
+//fetch xlsx file
+//https://1drv.ms/x/s!AptZCRjBU4chgp0Y7p3h28ISD39YJQ
+
+//app id = 3bce3124-41e9-445d-9aff-a3b90b7de430
+
+/* set up XMLHttpRequest */
+var url = "https://jy4pja.dm.files.1drv.com/y4mRryyUBbyj6zi2MkfR2TQ_Xk8kBcBNGfxC7N626TdxSx5r3i_wrOHDqEYDShTroys7--SM0koCKvhdU77FzDXolA_uotPD20akvB34PI963fUwxnPOj9erJSUALSNkcNLRup_ZMbguoFsxkxsztUwIKijGtkJ1t4RbMZr2IX22kcaehVNvyZNPpdWkuV52hZD/spring%20mass%20events.xlsx?download&psid=1";
+var oReq = new XMLHttpRequest();
+oReq.open("GET", url, true);
+oReq.responseType = "arraybuffer";
+
+oReq.onload = function(e) {
+    var arraybuffer = oReq.response;
+
+    /* convert data to binary string */
+    var data = new Uint8Array(arraybuffer);
+    var arr = new Array();
+    for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+    var bstr = arr.join("");
+
+    /* Call XLSX */
+    var workbook = XLSX.read(bstr, {
+        type: "binary"
+    });
+
+    /* DO SOMETHING WITH workbook HERE */
+    var first_sheet_name = workbook.SheetNames[0];
+    /* Get worksheet */
+    var worksheet = workbook.Sheets[first_sheet_name];
+    
+    var JSONstuff = XLSX.utils.sheet_to_json(worksheet, {
+        raw: true
+    });
+
+    console.log(JSONstuff);
+
+    for (let i = 0; i < JSONstuff.length; i++)
+    {
+      console.log(JSONstuff[i]);
+    }
+}
+
+oReq.send();
 
 
 if (today.getMonth() == Feb)
@@ -31,3 +74,6 @@ else if (today.getMonth() == Mar)
 }
 
 el.innerHTML = room;
+
+
+
