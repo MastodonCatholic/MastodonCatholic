@@ -3,12 +3,12 @@
 
 //app id = 3bce3124-41e9-445d-9aff-a3b90b7de430
 
-let myUrl = "https://onedrive.live.com/download?cid=218753C11809599B&resid=218753C11809599B%2136504&authkey=AE6Bl7Dyr-x_Q4s&em=2";
+let myUrl = "https://onedrive.live.com/download?cid=218753C11809599B&resid=218753C11809599B%2136507&authkey=ACQvjQKYIUgwkgI&em=2";
 
 //let myUrl = "https://www.google.com"
 
 // However to make it work, we are going to use the cors-anywhere free service to bypass this
-let proxy = 'https://cors-anywhere.herokuapp.com/';
+let proxy = 'https://mastodoncatholic-cors-server.herokuapp.com/';
 
 // Execute request
 let oReq = new XMLHttpRequest();
