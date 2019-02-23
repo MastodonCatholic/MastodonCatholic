@@ -83,10 +83,23 @@ oReq.addEventListener("load", function () {
       {
         let el = document.getElementById('room');
 
-        let room = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in room " + JSONstuff[i][Object.keys(JSONstuff[i])[1]];
+        let room_name = JSONstuff[i][Object.keys(JSONstuff[i])[1]];
 
-        el.innerHTML = room;
-        break;
+        console.log(room_name);
+
+        if (room_name.startsWith("nomass"))
+        {
+          room_name = room_name.replace("nomass", "");
+          el.innerHTML = "No Mass Tuesday: " + room_name + "!";
+          break;
+        }
+        else 
+        {
+          let mass_text = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
+
+          el.innerHTML = mass_text;
+          break;
+        }
       }
     }
 });
