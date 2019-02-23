@@ -26,6 +26,25 @@ function getJsDateFromExcel(excelDate) {
 
 }
 
+let months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+
+function DateString(month_date)
+{
+  if (month_date > 3 && month_date < 21) return (month_date + "th");
+  else if (month_date % 10 == 1) return (month_date + "st");
+  else if (month_date % 10 == 2) return (month_date + "nd");
+  else if (month_date % 10 == 3) return (month_date + "rd");
+  else if (month_date % 10 == 4) return (month_date + "th");
+  else if (month_date % 10 == 5) return (month_date + "th");
+  else if (month_date % 10 == 6) return (month_date + "th");
+  else if (month_date % 10 == 7) return (month_date + "th");
+  else if (month_date % 10 == 8) return (month_date + "th");
+  else if (month_date % 10 == 9) return (month_date + "th");
+  else if (month_date % 10 == 0) return (month_date + "th");
+  else
+    return month_date + "";
+}
+
 oReq.addEventListener("load", function () {
     let arraybuffer = this.response;
 
@@ -64,7 +83,7 @@ oReq.addEventListener("load", function () {
       {
         let el = document.getElementById('room');
 
-        let room = "Next Mass: " + mass_date.toDateString() + " in room " + JSONstuff[i][Object.keys(JSONstuff[i])[1]];
+        let room = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in room " + JSONstuff[i][Object.keys(JSONstuff[i])[1]];
 
         el.innerHTML = room;
         break;
