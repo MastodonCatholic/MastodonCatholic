@@ -117,37 +117,47 @@ body {
  }
  
  /* Dropdown Content (Hidden by Default) */
- .dropdown-content {
+ #UpcomingMassTimes {
    display: none;
    position: absolute;
    background-color: #8a5e5e00;
    min-width: 300px;
    z-index: 1;
+
+   animation-name: listfadein; 
+   animation-fill-mode: forwards;
+   animation-duration: 2s; 
+   animation-iteration-count: 1; 
  }
  
  /* Links inside the dropdown */
- .dropdown-content a {
+ #UpcomingMassTimes a {
    color: white;
    padding-top: 12px;
    text-decoration: none;
    display: block;
-
-   animation-name: listfade; 
-   animation-duration: 2s; 
-   animation-iteration-count: 1; 
  }
  
  /* Change color of dropdown links on hover */
  /*.dropdown-content a:hover {background-color: #ddd}*/
  
  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
- .show {display:block;}
-
+ /*.show {
+    display:block;
+   }*/
  
-@keyframes listfade {
+@keyframes listfadein {
    0%   { opacity: 0; }
    11.11%   { opacity: 0; }
    33.33%  { opacity: 0.5; }
    44.44%  { opacity: 1; }
    100% { opacity: 1; }
+ }
+
+ @keyframes listfadeout {
+   0%   { opacity: 1; }
+   11.11%   { opacity: 1; }
+   33.33%  { opacity: 0.5; }
+   44.44%  { opacity: 0; }
+   100% { opacity: 0; }
  }

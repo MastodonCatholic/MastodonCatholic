@@ -2,8 +2,19 @@
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
+
+document.getElementById("UpcomingMassTimes").style["animation-name"] = "listfadeout";
+
 function myFunction() {
-  document.getElementById("UpcomingMassTimes").classList.toggle("show");
+  document.getElementById("UpcomingMassTimes").style["display"] = "block";
+  if (document.getElementById("UpcomingMassTimes").style["animation-name"] == "listfadeout")
+  {
+    document.getElementById("UpcomingMassTimes").style["animation-name"] = "listfadein";
+  }
+  else
+  {
+    document.getElementById("UpcomingMassTimes").style["animation-name"] = "listfadeout";
+  }
 }
 
 //fetch xlsx file
@@ -131,5 +142,8 @@ oReq.addEventListener("load", function () {
 // Or post, etc
 oReq.open("GET", proxy + myUrl);
 oReq.send();
+
+//now check for payload in url
+//if so, log it with timestampt and IP address to database
 
 
