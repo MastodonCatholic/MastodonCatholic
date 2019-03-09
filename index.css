@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous|Ropa+Sans&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
 body, html {
    height: 100%;
    margin: 0;
@@ -71,6 +75,7 @@ body, html {
    top: 54%;
    width: 100%;
    justify-content: center;
+   z-index: 1;
 }
 
 @media only screen and (max-width: 400px) {
