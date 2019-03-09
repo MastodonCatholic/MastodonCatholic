@@ -1,3 +1,11 @@
+//JS and CSS stuff
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
 //fetch xlsx file
 //https://1drv.ms/x/s!AptZCRjBU4chgp0Y7p3h28ISD39YJQ
 
@@ -8,7 +16,7 @@ let myUrl = "https://onedrive.live.com/download?cid=218753C11809599B&resid=21875
 //let myUrl = "https://www.google.com"
 
 // However to make it work, we are going to use the cors-anywhere free service to bypass this
-let proxy = 'https://mastodoncatholic-cors-server.herokuapp.com/';
+let proxy = '';//'https://mastodoncatholic-cors-server.herokuapp.com/';
 
 // Execute request
 let oReq = new XMLHttpRequest();
@@ -70,6 +78,8 @@ oReq.addEventListener("load", function () {
 
     //console.log(JSONstuff);
 
+    let firstmasslogged = false;
+
     for (let i = 2; i < JSONstuff.length; i++)
     {
       console.log(JSONstuff[i]);
@@ -82,6 +92,7 @@ oReq.addEventListener("load", function () {
       if (mass_date > today)
       {
         let el = document.getElementById('room');
+        let li = document.getElementById('UpcomingMassTimes');
 
         let room_name = JSONstuff[i][Object.keys(JSONstuff[i])[1]];
 
@@ -90,15 +101,28 @@ oReq.addEventListener("load", function () {
         if (room_name.startsWith("nomass"))
         {
           room_name = room_name.replace("nomass", "");
-          el.innerHTML = "No Mass Tuesday: " + room_name + "!";
-          break;
+          if (firstmasslogged == false)
+          {
+            el.innerHTML = "No Mass Tuesday: " + room_name + "!";
+            firstmasslogged = true;
+          }
+          else
+          {
+            li.innerHTML += "No Mass Tuesday: " + room_name + "!";
+          }
         }
         else 
         {
           let mass_text = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
 
-          el.innerHTML = mass_text;
-          break;
+          if (firstmasslogged == false)
+          {
+            el.innerHTML = mass_text;
+          }
+          else
+          {
+            li.innerHTML += mass_text;
+          }
         }
       }
     }
