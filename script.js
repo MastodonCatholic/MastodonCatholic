@@ -3,7 +3,7 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("UpcomingMassTimes").classList.toggle("show");
 }
 
 //fetch xlsx file
