@@ -73,10 +73,21 @@ body, html {
    justify-content: center;
 }
 
+
+ 
+
 #CatholicMass {
    font-size: 50pt;
    text-decoration: underline;
 }
+
+@media only screen and (max-width: 400px) {
+   #CatholicMass {
+      
+   }
+}
+
+
 .MassTime {
    font-size: 20pt;
 }
