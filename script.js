@@ -118,6 +118,7 @@ oReq.addEventListener("load", function () {
           if (firstmasslogged == false)
           {
             el.innerHTML = mass_text;
+            firstmasslogged = true;
           }
           else
           {
