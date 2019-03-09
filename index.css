@@ -120,7 +120,7 @@ body {
    display: none;
    position: absolute;
    background-color: #8a5e5e00;
-   min-width: 160px;
+   min-width: 300px;
    z-index: 1;
  }
  

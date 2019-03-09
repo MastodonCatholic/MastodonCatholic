@@ -108,20 +108,20 @@ oReq.addEventListener("load", function () {
           }
           else
           {
-            li.innerHTML += "<a>" + "No Mass Tuesday: " + room_name + "!" + "</a>";
+            li.innerHTML += "<a>" + "No Mass: " + room_name + "!" + "</a>";
           }
         }
         else 
         {
-          let mass_text = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
-
           if (firstmasslogged == false)
           {
+            let mass_text = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
             el.innerHTML = mass_text;
             firstmasslogged = true;
           }
           else
           {
+            let mass_text = "" + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
             li.innerHTML += "<a>" + mass_text + "</a>";
           }
         }
