@@ -108,7 +108,7 @@ oReq.addEventListener("load", function () {
           }
           else
           {
-            li.innerHTML += "No Mass Tuesday: " + room_name + "!";
+            li.innerHTML += "<a>" + "No Mass Tuesday: " + room_name + "!" + "</a>";
           }
         }
         else 
@@ -121,7 +121,7 @@ oReq.addEventListener("load", function () {
           }
           else
           {
-            li.innerHTML += mass_text;
+            li.innerHTML += "<a>" + mass_text + "</a>";
           }
         }
       }
