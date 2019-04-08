@@ -143,19 +143,46 @@ oReq.addEventListener("load", function () {
 oReq.open("GET", proxy + myUrl);
 oReq.send();
 
-//do thy dirty work w the cookies
-console.log(document.cookie);
-document.cookie = "anothername = 234";
-console.log(document.cookie);
 
-//create object to send
 
-dbData = {
-  url: document.URL,
-  cookiedata:"fake news",
-  misc:"same to you"
+//generates random user ID if necessary
+function ID() {
+  return '_' + Math.random().toString(36).substr(2, 9);
 };
 
+//grabs json cookie
+function getJSONcookie() {
+    return document.cookie.split(';').map(function(c) {
+      return c.trim().split('=').map(decodeURIComponent);
+    }).reduce(function(a, b) {
+      try {
+        a[b[0]] = JSON.parse(b[1]);
+      } catch (e) {
+        a[b[0]] = b[1];
+      }
+      return a;
+  }, {});
+}
+
+//grab cookie in JSON form
+JSONcookie=getJSONcookie();
+
+//check is userID exists
+if (typeof JSONcookie.userID == "undefined")
+{
+  //if not, create it
+  document.cookie = "userID=" + ID() + ";";
+}
+
+//refresh JSONcookie
+JSONcookie=getJSONcookie();
+
+//create object to send
+dbData = {
+  url: document.URL,
+  cookiedata:JSONcookie.userID,
+  misc:""
+};
 
 //log timestamp, url,  and user id to database
 let dbReq = new XMLHttpRequest();
