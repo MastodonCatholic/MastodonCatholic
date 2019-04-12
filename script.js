@@ -171,7 +171,7 @@ JSONcookie=getJSONcookie();
 if (typeof JSONcookie.userID == "undefined")
 {
   //if not, create it
-  document.cookie = "userID=" + ID() + ";";
+  document.cookie = "userID=" + ID() + "; expires=Fri, 3 Aug 2022 20:47:11 UTC";
 }
 
 //refresh JSONcookie
