@@ -7,7 +7,13 @@ var images = ["Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg",
               "00.159.223_PS1.jpg",
               "1ea2068d15476c63af1a4ef602d03f88 (1).jpg",
               "IMG_20190219_123937978_BURST000_COVER.jpg",
-              "14ChrismMassFW20.jpg"];
+              "14ChrismMassFW20.jpg",
+              "FWchrismMass.jpg",
+              "holythursday.jpg",
+              "imgdavincilastsupper.jpg",
+              "easter_fire0.jpg",
+              "easter_fire1.jpg",
+              "easter_fire2.jpg"];
 
 
 var newelement='';
