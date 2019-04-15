@@ -35,8 +35,6 @@ body, html {
 
 .main-content {
    margin: auto;
-   margin-top: 60px;
-   margin-bottom: 60px;
    background-color: rgba(107, 107, 107, 0.562)
 }
 

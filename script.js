@@ -137,7 +137,7 @@ oReq.addEventListener("load", function () {
       if (mass_date > today)
       {
         let el = document.getElementById('MASSTIME');
-        let li = document.getElementById('UpcomingMassTimes');
+        let li = document.getElementById('UPCOMINGMASSTIMES');
 
         let room_name = JSONstuff[i][Object.keys(JSONstuff[i])[1]];
 
@@ -153,7 +153,7 @@ oReq.addEventListener("load", function () {
           }
           else
           {
-            li.innerHTML += "<a>" + "No Mass: " + room_name + "!" + "</a>";
+            li.innerHTML += "<p>" + "No Mass: " + room_name + "!" + "</p>";
           }
         }
         else 
@@ -167,7 +167,7 @@ oReq.addEventListener("load", function () {
           else
           {
             let mass_text = "" + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
-            li.innerHTML += "<a>" + mass_text + "</a>";
+            li.innerHTML += "<p>" + mass_text + "</p>";
           }
         }
       }
