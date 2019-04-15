@@ -21,37 +21,16 @@ body, html {
    background-repeat: no-repeat;
    background-size: cover;
 
-   animation-name: fade; 
-   animation-duration: 15s; 
-   animation-iteration-count: infinite; 
+   animation-fill-mode: forwards;
 }
 
-#bgimage1 {
-   background-image: url("Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg");
-   animation-delay: 0s;
-}
-#bgimage2 {
-   background-image: url("00.159.220_PS2.jpg");
-   animation-delay: 3s;
-}
-#bgimage3 {
-   background-image: url("00.159.223_PS1.jpg");
-   animation-delay: 6s;
-}
-#bgimage4 {
-   background-image: url("1ea2068d15476c63af1a4ef602d03f88 (1).jpg");
-   animation-delay: 9s;
-}
-#bgimage5 {
-   background-image: url("IMG_20190219_123937978_BURST000_COVER.jpg");
-   animation-delay: 12s;
-}
-
-@keyframes fade {
+@keyframes bgfadein {
    0%   { opacity: 0; }
-   11.11%   { opacity: 1; }
-   33.33%  { opacity: 1; }
-   44.44%  { opacity: 0; }
+   100% { opacity: 1; }
+ }
+
+ @keyframes bgfadeout {
+   0%   { opacity: 1; }
    100% { opacity: 0; }
  }
 
