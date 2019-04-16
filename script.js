@@ -13,7 +13,8 @@ var images = ["Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg",
               "imgdavincilastsupper.jpg",
               "easter_fire0.jpg",
               "easter_fire1.jpg",
-              "easter_fire2.jpg"];
+              "easter_fire2.jpg",
+              "e6c5440d25aa40c598c2a3c5c7cd15af.jpg"];
 
 
 var newelement='';
