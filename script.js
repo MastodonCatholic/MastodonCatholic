@@ -23,7 +23,9 @@ var delay = 5;
 //add image divs
 for (var i = 0; i < images.length; i++)
 {
-  newelement = newelement + '<div class="bg" id="bgimage' + i + '" style="background-image: url(' + images[i] + ');"></div>';
+  var style_element = "";
+  var bg_element = '<div class="bg" id="bgimage' + (images.length-i-1) + '" style="background-image: url(' + images[i] + ');"></div>';
+  newelement = bg_element + style_element + newelement;
   console.log(newelement)
 }
 
