@@ -2,7 +2,9 @@
 
 //Add the list of images
 
-var images = ["Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg",
+var images = ["easter_fire2.jpg",
+              "e6c5440d25aa40c598c2a3c5c7cd15af.jpg",
+              "Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg",
               "00.159.220_PS2.jpg",
               "00.159.223_PS1.jpg",
               "1ea2068d15476c63af1a4ef602d03f88 (1).jpg",
@@ -12,9 +14,8 @@ var images = ["Antoni_Estruch-_Sant_Sopar-_Museu_dArt_de_Sabadell.jpg",
               "holythursday.jpg",
               "imgdavincilastsupper.jpg",
               "easter_fire0.jpg",
-              "easter_fire1.jpg",
-              "easter_fire2.jpg",
-              "e6c5440d25aa40c598c2a3c5c7cd15af.jpg"];
+              "easter_fire1.jpg"
+              ];
 
 
 var newelement='';
