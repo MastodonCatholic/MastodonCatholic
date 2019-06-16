@@ -1,0 +1,10 @@
+@media screen and (max-width: 1200px) {   
+    #bgimage{
+    	background-image: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
+    } 
+}
+@media (min-width: 1200px) {    
+     #main-img{         
+         background-image: url(http://subtlepatterns.com/patterns/paisley.png);
+     } 
+}

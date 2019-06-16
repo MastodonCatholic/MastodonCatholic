@@ -66,7 +66,9 @@ setInterval(animateBG, delay*1000);
 
 //app id = 3bce3124-41e9-445d-9aff-a3b90b7de430
 
-let myUrl = "https://onedrive.live.com/download?cid=218753C11809599B&resid=218753C11809599B%2136507&authkey=ACQvjQKYIUgwkgI&em=2";
+//let myUrl = "https://onedrive.live.com/download?cid=218753C11809599B&resid=218753C11809599B%2136507&authkey=ACQvjQKYIUgwkgI&em=2";
+
+let myUrl = "https://www.dropbox.com/s/i5e6fbse73sl108/spring%20mass%20events2.xlsx?dl=1";
 
 //let myUrl = "https://www.google.com"
 
