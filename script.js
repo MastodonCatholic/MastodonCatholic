@@ -137,6 +137,8 @@ oReq.addEventListener("load", function () {
 
     let firstmasslogged = false;
 
+    let masses_logged = 0;
+    
     for (let i = 2; i < JSONstuff.length; i++)
     {
       console.log(JSONstuff[i]);
@@ -148,6 +150,8 @@ oReq.addEventListener("load", function () {
 
       if (mass_date > today)
       {
+        masses_logged++;
+        if (masses_logged > 4) break;
         let el = document.getElementById('MASSTIME');
         let li = document.getElementById('UPCOMINGMASSTIMES');
 
