@@ -110,7 +110,9 @@ function DateString(month_date)
     return month_date + "";
 }
 
-oReq.addEventListener("load", function () {
+oReq.addEventListener("load", load_mass_times);
+
+function load_mass_times() {
     let arraybuffer = this.response;
 
     // convert data to binary string
@@ -151,9 +153,10 @@ oReq.addEventListener("load", function () {
       if (mass_date > today)
       {
         masses_logged++;
-        if (masses_logged > 4) break;
         let el = document.getElementById('MASSTIME');
         let li = document.getElementById('UPCOMINGMASSTIMES');
+        let li2 = document.getElementById('EXTRA_UPCOMINGMASSTIMES');
+
 
         let room_name = JSONstuff[i][Object.keys(JSONstuff[i])[1]];
 
@@ -169,7 +172,11 @@ oReq.addEventListener("load", function () {
           }
           else
           {
-            li.innerHTML += "<p>" + "No Mass: " + room_name + "!" + "</p>";
+            let newhtml = "<p>" + "No Mass: " + room_name + "!" + "</p>";        
+            if (masses_logged > 5)
+              li2.innerHTML += newhtml;
+            else
+              li.innerHTML += newhtml;
           }
         }
         else 
@@ -183,12 +190,16 @@ oReq.addEventListener("load", function () {
           else
           {
             let mass_text = "" + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
-            li.innerHTML += "<p>" + mass_text + "</p>";
+            let newhtml = "<p>" + mass_text + "</p>";
+            if (masses_logged > 5)
+              li2.innerHTML += newhtml;
+            else
+              li.innerHTML += newhtml;
           }
         }
       }
     }
-});
+};
 
 oReq.open("GET", proxy + myUrl);
 oReq.send();
