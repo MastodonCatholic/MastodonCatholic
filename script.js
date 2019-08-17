@@ -22,7 +22,15 @@ var newelement='';
 var delay = 5;
 
 //add image divs
-for (var i = 0; i < images.length; i++)
+for (var i = 0; i < images.length-1; i++)
+{
+  var style_element = "";
+  var bg_element = '<div class="bg" id="bgimage' + (images.length-i-1) + '" style="opacity: 0; background-image: url(' + images[i] + ');"></div>';
+  newelement = bg_element + style_element + newelement;
+  console.log(newelement)
+}
+
+for (var i = images.length-1; i < images.length; i++)
 {
   var style_element = "";
   var bg_element = '<div class="bg" id="bgimage' + (images.length-i-1) + '" style="background-image: url(' + images[i] + ');"></div>';
@@ -33,27 +41,31 @@ for (var i = 0; i < images.length; i++)
 document.getElementById("body").innerHTML = newelement + document.getElementById("body").innerHTML;
 
 //loop through on timer and animate
-var bg = images.length-1;
+var bg = 1;
 
 function animateBG()
 {
+  if (bg == images.length)
+    bg = 0;
 
+  console.log(bg);
   if (bg == 0)
   {
     for (var i = 1/*NOT zero cuz that's the one on the bottom*/; i < images.length; i++)
     {
-      document.getElementById("bgimage" + i).style["animation-name"] = "bgfadein";
+      document.getElementById("bgimage" + i).style["animation-name"] = "bgfadeout";
       document.getElementById("bgimage" + i).style["animation-duration"] = "2s";
     }
 
-    bg = images.length-1;
+    bg++;
   }
   else
   {
-    document.getElementById("bgimage" + bg).style["animation-name"] = "bgfadeout";
+    $("#" + "bgimage" + bg).css("opacity", "");
+    document.getElementById("bgimage" + bg).style["animation-name"] = "bgfadein";
     document.getElementById("bgimage" + bg).style["animation-duration"] = "2s";
     
-    bg--;
+    bg++;
   }
 
   
