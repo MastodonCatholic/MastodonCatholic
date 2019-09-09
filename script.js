@@ -104,7 +104,8 @@ setInterval(animateBG, delay*1000);
 
 //let myUrl = "https://onedrive.live.com/download?cid=218753C11809599B&resid=218753C11809599B%2136507&authkey=ACQvjQKYIUgwkgI&em=2";
 
-let myUrl = "https://www.dropbox.com/s/i5e6fbse73sl108/spring%20mass%20events2.xlsx?dl=1";
+let myUrl = "https://www.dropbox.com/s/mkc2mhajai798lk/Spring2019Mass.csv?dl=1";
+//let myUrl = "https://www.dropbox.com/s/i5e6fbse73sl108/spring%20mass%20events2.xlsx?dl=1";
 
 //let myUrl = "https://www.google.com"
 
@@ -113,7 +114,7 @@ let proxy = 'https://mastodoncatholic-cors-server.herokuapp.com/';
 
 // Execute request
 let oReq = new XMLHttpRequest();
-oReq.responseType = "arraybuffer";
+oReq.responseType = "text";
 
 function getJsDateFromExcel(excelDate) {
 
@@ -152,38 +153,56 @@ function load_mass_times() {
     let arraybuffer = this.response;
 
     // convert data to binary string
-    let data = new Uint8Array(arraybuffer);
-    let arr = new Array();
-    for (let i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-    let bstr = arr.join("");
+    console.log(arraybuffer);
 
-    // Call XLSX
-    let workbook = XLSX.read(bstr, {
-        type: "binary"
-    });
+    let cells = [];
+    
+    for (let i = 0; i < arraybuffer.length; i++)
+    {
+      if ((arraybuffer[i] == '\n') || (arraybuffer[i] == '\0'))
+      {
+        cells.push([]);
+      }
+    }
 
-    // DO SOMETHING WITH workbook HERE 
-    let first_sheet_name = workbook.SheetNames[0];
-    // Get worksheet 
-    let worksheet = workbook.Sheets[first_sheet_name];
+    let row = 0;
+    let column = 0;
+    let newcelldata = "";
 
-    let JSONstuff = XLSX.utils.sheet_to_json(worksheet, {
-        raw: true
-    });
+    for (let i = 0; i < arraybuffer.length; i++)
+    {
+      if (arraybuffer[i] == ',')
+      {
+        cells[row][column] = newcelldata;
+        column++;
+        newcelldata = "";
+      }
+      else if ((arraybuffer[i] == '\n') || (arraybuffer[i] == '\0'))
+      {
+        if (newcelldata.length != 0)
+        {
+          cells[row][column] = newcelldata;
+          row++;
+          column = 0;
+          newcelldata = "";
+        }
+      }
+      else
+        newcelldata += "" + arraybuffer[i];
+    }
 
-    //console.log(JSONstuff);
+    console.log(cells);
 
     let firstmasslogged = false;
 
     let masses_logged = 0;
     
-    for (let i = 2; i < JSONstuff.length; i++)
+    for (let i = 2; i < cells.length; i++)
     {
-      console.log(JSONstuff[i]);
-      console.log(JSONstuff[i][Object.keys(JSONstuff[i])[1]]);
-      console.log(getJsDateFromExcel(JSONstuff[i][Object.keys(JSONstuff[i])[0]]));
+      console.log(cells[i]);
+      console.log(getJsDateFromExcel(cells[i][0]));
 
-      let mass_date = getJsDateFromExcel(JSONstuff[i][Object.keys(JSONstuff[i])[0]]);
+      let mass_date = getJsDateFromExcel(cells[i][0]);
       let today = new Date();
 
       if (mass_date > today)
@@ -194,7 +213,7 @@ function load_mass_times() {
         let li2 = document.getElementById('EXTRA_UPCOMINGMASSTIMES');
 
 
-        let room_name = JSONstuff[i][Object.keys(JSONstuff[i])[1]];
+        let room_name = cells[i][2];
 
         console.log(room_name);
 
