@@ -256,7 +256,7 @@ function load_mass_times() {
     }
 };
 
-oReq.open("GET", myUrl);
+oReq.open("GET", proxy + myUrl);
 oReq.send();
 
 //generates random user ID if necessary
