@@ -152,6 +152,26 @@ oReq.addEventListener("load", load_mass_times);
 function load_mass_times() {
     let arraybuffer = this.response;
 
+    arraybuffer = "Tuesday Mass,,\n" + 
+    "Numerical Date,Date,Room\n" + 
+    "43690,13-Aug,nomass Enjoy Summer\n" + 
+    "43711,3-Sep,WU 222-226\n" + 
+    "43718,10-Sep,WU 222-226\n" + 
+    "43725,17-Sep,WU 222-226\n" + 
+    "43732,24-Sep,Walb G-21\n" + 
+    "43739,1-Oct,Walb G-21\n" + 
+    "43746,8-Oct,Walb G-21\n" + 
+    "43753,15-Oct,LB (Helmke) 440A\n" + 
+    "43760,22-Oct,nomass Enjoy Fall Break\n" + 
+    "43767,29-Oct,Walb G-21\n" + 
+    "43774,5-Nov,WU 222-226\n" + 
+    "43781,12-Nov,WU 222-226\n" + 
+    "43788,19-Nov,WU 222-226\n" + 
+    "43795,26-Nov,nomass No priest available\n" + 
+    "43802,3-Dec,nomass No priest available\n" + 
+    "43809,10-Dec,WU 222-226\n" + 
+    "43816,17-Dec,nomass Finals Week";
+
     // convert data to binary string
     console.log(arraybuffer);
 
