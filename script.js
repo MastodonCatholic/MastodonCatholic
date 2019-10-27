@@ -163,7 +163,7 @@ function load_mass_times() {
     "43746,8-Oct,Walb G-21\n" + 
     "43753,15-Oct,LB (Helmke) 440A\n" + 
     "43760,22-Oct,nomass Enjoy Fall Break\n" + 
-    "43767,29-Oct,Walb G-21\n" + 
+    "43767,29-Oct,nomass Lectio Divina in Walb G-21\n" + 
     "43774,5-Nov,WU 222-226\n" + 
     "43781,12-Nov,WU 222-226\n" + 
     "43788,19-Nov,WU 222-226\n" + 
