@@ -113,8 +113,8 @@ let myUrl = "https://www.dropbox.com/s/dl/mkc2mhajai798lk/Spring2019Mass.csv?dl=
 let proxy = 'https://mastodoncatholic-cors-server.herokuapp.com/';
 
 // Execute request
-let oReq = new XMLHttpRequest();
-oReq.responseType = "text";
+//let oReq = new XMLHttpRequest();
+//oReq.responseType = "text";
 
 function getJsDateFromExcel(excelDate) {
 
@@ -147,12 +147,14 @@ function DateString(month_date)
     return month_date + "";
 }
 
-oReq.addEventListener("load", load_mass_times);
+//oReq.addEventListener("load", load_mass_times);
+
+load_mass_times();
 
 function load_mass_times() {
-    let arraybuffer = this.response;
+    //let arraybuffer = this.response;
 
-    arraybuffer = "Tuesday Mass,,\n" + 
+    let arraybuffer = "Tuesday Mass,,\n" + 
     "Numerical Date,Date,Room\n" + 
     "43690,13-Aug,nomass Enjoy Summer\n" + 
     "43711,3-Sep,WU 222-226\n" + 
@@ -276,8 +278,8 @@ function load_mass_times() {
     }
 };
 
-oReq.open("GET", proxy + myUrl);
-oReq.send();
+//oReq.open("GET", proxy + myUrl);
+//oReq.send();
 
 //generates random user ID if necessary
 function ID() {
