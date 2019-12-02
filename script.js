@@ -170,7 +170,7 @@ function load_mass_times() {
     "43781,12-Nov,WU 222-226\n" + 
     "43788,19-Nov,WU 222-226\n" + 
     "43795,26-Nov,nomass No priest available\n" + 
-    "43802,3-Dec,Visio Divina in Walb 222-226\n" + 
+    "43802,3-Dec,nomass Dec. 3rd: Visio Divina in Walb 222-226\n" + 
     "43809,10-Dec,WU 222-226\n" + 
     "43816,17-Dec,nomass Finals Week";
 
