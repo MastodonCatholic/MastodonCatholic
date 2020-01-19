@@ -154,25 +154,26 @@ load_mass_times();
 function load_mass_times() {
     //let arraybuffer = this.response;
 
-    let arraybuffer = "Tuesday Mass,,\n" + 
-    "Numerical Date,Date,Room\n" + 
-    "43690,13-Aug,nomass Enjoy Summer\n" + 
-    "43711,3-Sep,WU 222-226\n" + 
-    "43718,10-Sep,WU 222-226\n" + 
-    "43725,17-Sep,WU 222-226\n" + 
-    "43732,24-Sep,Walb G-21\n" + 
-    "43739,1-Oct,Walb G-21\n" + 
-    "43746,8-Oct,Walb G-21\n" + 
-    "43753,15-Oct,LB (Helmke) 440A\n" + 
-    "43760,22-Oct,nomass Enjoy Fall Break\n" + 
-    "43767,29-Oct,nomass Lectio Divina in Walb G-21\n" + 
-    "43774,5-Nov,WU 222-226\n" + 
-    "43781,12-Nov,WU 222-226\n" + 
-    "43788,19-Nov,WU 222-226\n" + 
-    "43795,26-Nov,nomass No priest available\n" + 
-    "43802,3-Dec,nomass Dec. 3rd: Visio Divina in Walb 222-226\n" + 
-    "43809,10-Dec,WU 222-226\n" + 
-    "43816,17-Dec,nomass Finals Week";
+    let arraybuffer =     
+    "Wednesday Mass,,\n" +
+    "Numerical Date,Date,Room\n" +
+    "43852,22-Jan,Walb G-08\n" +
+    "43859,29-Jan,Walb G-21\n" +
+    "43866,5-Feb,Walb G-21\n" +
+    "43873,12-Feb,Walb G-21\n" +
+    "43880,19-Feb,Walb G-21\n" +
+    "43887,26-Feb,WU 222-226\n" +
+    "43894,4-Mar,Walb G-21\n" +
+    "43901,11-Mar,nomass Spring Break\n" +
+    "43908,18-Mar,Walb G-21\n" +
+    "43915,25-Mar,Walb G-21\n" +
+    "43922,1-Apr,Walb G-08\n" +
+    "43929,8-Apr,Walb G-21\n" +
+    "43936,15-Apr,Walb G-21\n" +
+    "43943,22-Apr,Walb G-21\n" +
+    "43950,29-Apr,Walb G-21\n" +
+    "43957,6-May,nomass Dead Week\n" +
+    "43964,13-May,nomass Finals Week";
 
     // convert data to binary string
     console.log(arraybuffer);
@@ -244,7 +245,7 @@ function load_mass_times() {
           room_name = room_name.replace("nomass", "");
           if (firstmasslogged == false)
           {
-            el.innerHTML = "No Mass Tuesday: " + room_name + "!";
+            el.innerHTML = "No Mass Wednesday: " + room_name + "!";
             firstmasslogged = true;
           }
           else
