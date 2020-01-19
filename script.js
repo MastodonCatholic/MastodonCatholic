@@ -220,7 +220,7 @@ function load_mass_times() {
 
     let masses_logged = 0;
     
-    for (let i = 2; i < cells.length; i++)
+    for (let i = 1; i < cells.length; i++)
     {
       console.log(cells[i]);
       console.log(getJsDateFromExcel(cells[i][0]));
