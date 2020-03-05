@@ -250,7 +250,7 @@ function load_mass_times() {
           }
           else
           {
-            let newhtml = "<p>" + "No Mass: " + room_name + "!" + "</p>";        
+            let newhtml = "<p>" + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " No Mass: " + room_name + "!" + "</p>";        
             if (masses_logged > 5)
               li2.innerHTML += newhtml;
             else
