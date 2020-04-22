@@ -157,7 +157,7 @@ function load_mass_times() {
     let arraybuffer =     
     "Wednesday Mass,,\n" +
     "Numerical Date,Date,Room\n" +
-    "43964,13-May,nomass Online School, stay healthy! :( ";
+    "43964,13-May,nomass Online School - stay healthy  :(    \n";
 
     // convert data to binary string
     console.log(arraybuffer);
