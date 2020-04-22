@@ -157,23 +157,7 @@ function load_mass_times() {
     let arraybuffer =     
     "Wednesday Mass,,\n" +
     "Numerical Date,Date,Room\n" +
-    "43852,22-Jan,Walb G-08\n" +
-    "43859,29-Jan,Walb G-21\n" +
-    "43866,5-Feb,Walb G-21\n" +
-    "43873,12-Feb,nomass Lectio Divina in Walb G-21\n" +
-    "43880,19-Feb,Walb G-21\n" +
-    "43887,26-Feb,WU 222-226\n" +
-    "43894,4-Mar,Walb G-21\n" +
-    "43901,11-Mar,nomass Spring Break\n" +
-    "43908,18-Mar,Walb G-21\n" +
-    "43915,25-Mar,Walb G-21\n" +
-    "43922,1-Apr,Walb G-08\n" +
-    "43929,8-Apr,Walb G-21\n" +
-    "43936,15-Apr,Walb G-21\n" +
-    "43943,22-Apr,Walb G-21\n" +
-    "43950,29-Apr,Walb G-21\n" +
-    "43957,6-May,nomass Study session in Walb 222-226\n" +
-    "43964,13-May,nomass Finals Week";
+    "43964,13-May,nomass Online School, stay healthy! :( ";
 
     // convert data to binary string
     console.log(arraybuffer);
