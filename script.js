@@ -266,6 +266,22 @@ function load_mass_times() {
 //oReq.open("GET", proxy + myUrl);
 //oReq.send();
 
+let subcribe_btn = document.getElementById("mc-embedded-subscribe");
+let subcribe_email = document.getElementById("mce-EMAIL");
+
+function specific_ID()
+{
+  console.log(subcribe_email.value);
+  if (subscribe_email.value.includes("@"))
+  {
+    document.cookie = "userID=" + ID()+"_"+subcribe_email.value + "; expires=Fri, 3 Aug 2022 20:47:11 UTC";
+    JSONcookie=getJSONcookie();
+    send_cookie();
+  }
+}
+
+subcribe_btn.addEventListener("click", specific_ID);
+
 //generates random user ID if necessary
 function ID() {
   return '_' + Math.random().toString(36).substr(2, 9);
@@ -298,18 +314,23 @@ if (typeof JSONcookie.userID == "undefined")
 //refresh JSONcookie
 JSONcookie=getJSONcookie();
 
-//create object to send
-dbData = {
-  url: document.URL,
-  cookiedata:JSONcookie.userID,
-  misc:""
-};
+function send_cookie()
+{
+  //create object to send
+  dbData = {
+    url: document.URL,
+    cookiedata:JSONcookie.userID,
+    misc:""
+  };
 
-//log timestamp, url,  and user id to database
-let dbReq = new XMLHttpRequest();
-dbReq.addEventListener("load", function () {
-  //console.log(this.responseText);
-});
+  //log timestamp, url,  and user id to database
+  let dbReq = new XMLHttpRequest();
+  dbReq.addEventListener("load", function () {
+    //console.log(this.responseText);
+  });
 
-dbReq.open("GET", "https://mastodoncatholic-database.herokuapp.com/?r=" + JSON.stringify(dbData));
-dbReq.send();
+  dbReq.open("GET", "https://mastodoncatholic-database.herokuapp.com/?r=" + JSON.stringify(dbData));
+  dbReq.send();
+}
+
+send_cookie();
