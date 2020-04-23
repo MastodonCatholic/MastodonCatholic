@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous|Ropa+Sans&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+
+
+
+
+body, html {
+    margin: 10;
+    padding: 10;
+    font-family: 'Copperplate Gothic Light';
+    color: rgb(255, 0, 0);
+    text-align: center;
+    background-color: silver;
+ }
+
+ .mv-daynames-table {
+    color: rgb(255, 0, 0);
+ }
