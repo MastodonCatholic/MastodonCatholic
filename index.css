@@ -65,6 +65,16 @@ p {
    margin-bottom: 0.5rem;
 }
 
+/*child first only*/
+#mc_calendar .fc-view-container
+{
+   background-color: #16141442
+}
+#mc_calendar .fc-today
+{
+   background-color: #ececec5e
+}
+
 @keyframes bgfadein {
    0%   { opacity: 0; }
    100% { opacity: 1; }
