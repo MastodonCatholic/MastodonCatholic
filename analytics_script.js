@@ -1,14 +1,14 @@
 //JS and CSS stuff
 
 let subcribe_btn = document.getElementById("mc-embedded-subscribe");
-let subcribe_email = document.getElementById("mce-EMAIL");
+let subscribe_email = document.getElementById("mce-EMAIL");
 
 function specific_ID()
 {
-  console.log(subcribe_email.value);
+  console.log(subscribe_email.value);
   if (subscribe_email.value.includes("@"))
   {
-    document.cookie = "userID=" + ID()+"_"+subcribe_email.value + "; expires=Fri, 3 Aug 2022 20:47:11 UTC";
+    document.cookie = "userID=" + ID()+"_"+subscribe_email.value + "; expires=Fri, 3 Aug 2022 20:47:11 UTC";
     JSONcookie=getJSONcookie();
     send_cookie();
   }
