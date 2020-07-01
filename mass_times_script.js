@@ -33,6 +33,8 @@ function getJsDateFromExcel(excelDate) {
 
 let months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 function DateString(month_date)
 {
   if (month_date > 3 && month_date < 21) return (month_date + "th");
@@ -55,12 +57,25 @@ function DateString(month_date)
 load_mass_times();
 
 function load_mass_times() {
-    //let arraybuffer = this.response;
+  
+    let arraybuffer="";
 
-    let arraybuffer =     
-    "Wednesday Mass,,\n" +
-    "Numerical Date,Date,Room\n" +
-    "43964,13-May,nomass Online School - stay healthy  :(    \n";
+    let file = "masstimes.csv";
+
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                arraybuffer = allText;
+            }
+        }
+    }
+    rawFile.send(null);
 
     // convert data to binary string
     console.log(arraybuffer);
@@ -69,7 +84,7 @@ function load_mass_times() {
     
     for (let i = 0; i < arraybuffer.length; i++)
     {
-      if ((arraybuffer[i] == '\n') || (arraybuffer[i] == '\0'))
+      if ((arraybuffer[i] == '\n') || (arraybuffer[i] == '\0') || i == arraybuffer.length-1)
       {
         cells.push([]);
       }
@@ -87,7 +102,7 @@ function load_mass_times() {
         column++;
         newcelldata = "";
       }
-      else if ((arraybuffer[i] == '\n') || (arraybuffer[i] == '\0'))
+      else if ((arraybuffer[i] == '\n') || (arraybuffer[i] == '\0') || i == arraybuffer.length-1)
       {
         if (newcelldata.length != 0)
         {
@@ -109,11 +124,11 @@ function load_mass_times() {
     
     for (let i = 1; i < cells.length; i++)
     {
-      console.log(cells[i]);
-      console.log(getJsDateFromExcel(cells[i][0]));
-
-      let mass_date = getJsDateFromExcel(cells[i][0]);
+      let mass_date = new Date(cells[i][0]);
       let today = new Date();
+
+      console.log(today);
+      console.log(mass_date);
 
       if (mass_date > today)
       {
@@ -122,8 +137,7 @@ function load_mass_times() {
         let li = document.getElementById('UPCOMINGMASSTIMES');
         let li2 = document.getElementById('EXTRA_UPCOMINGMASSTIMES');
 
-
-        let room_name = cells[i][2];
+        let room_name = cells[i][1];
 
         console.log(room_name);
 
@@ -132,7 +146,7 @@ function load_mass_times() {
           room_name = room_name.replace("nomass", "");
           if (firstmasslogged == false)
           {
-            el.innerHTML = "No Mass Wednesday: " + room_name + "!";
+            el.innerHTML = "No Mass " + days[mass_date.getDay()] + ": " + room_name + "!";
             firstmasslogged = true;
           }
           else
