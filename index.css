@@ -2,10 +2,17 @@
 @import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous&amp;subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Abel");
 
+@font-face {
+	font-family: 'Copperplate Gothic Lights';
+	src: 
+      url('Copperplate Gothic Light Regular.ttf') 
+		format('truetype');
+}
+
 body, html {
    margin: 0;
    padding: 0;
-   font-family: 'Copperplate Gothic Light';
+   font-family: 'Copperplate Gothic Lights';
    color: white;
    text-align: center;
 }
