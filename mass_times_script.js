@@ -136,7 +136,9 @@ function load_mass_times() {
         let el = document.getElementById('MASSTIME');
         let li = document.getElementById('UPCOMINGMASSTIMES');
         let li2 = document.getElementById('EXTRA_UPCOMINGMASSTIMES');
-
+        
+        let scr1 = document.getElementById('MASSTIME_SCREENSHOT1');
+        let scr2 = document.getElementById('MASSTIME_SCREENSHOT2');
         let room_name = cells[i][1];
 
         console.log(room_name);
@@ -146,7 +148,21 @@ function load_mass_times() {
           room_name = room_name.replace("nomass", "");
           if (firstmasslogged == false)
           {
-            el.innerHTML = "No Mass " + days[mass_date.getDay()] + ": " + room_name + "!";
+            try{
+              el.innerHTML = "No Mass " + days[mass_date.getDay()] + ": " + room_name + "!";
+            }
+            catch(err){
+    
+            }
+            
+            try
+            {
+              scr1.innerHTML = "NO MASS";
+              scr2.innerHTML = "NO MASS";
+            }
+            catch(err){
+    
+            }
             firstmasslogged = true;
           }
           else
@@ -163,7 +179,21 @@ function load_mass_times() {
           if (firstmasslogged == false)
           {
             let mass_text = "Next Mass: " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + " in " + room_name;
+            console.log("WHAT?");
+            try{
             el.innerHTML = mass_text;
+            }
+            catch(err){
+    
+            }
+            try {
+              scr1.innerHTML = days[mass_date.getDay()] + " " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + "@ 11AM";
+              scr2.innerHTML = " in " + room_name;
+            }
+            catch(err){
+              console.log(err);
+              console.log("this failed");
+            }
             firstmasslogged = true;
           }
           else

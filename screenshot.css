@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous|Ropa+Sans&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Abel|Fira+Sans|Major+Mono+Display|Play|Rajdhani|Righteous&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+@font-face {
+	font-family: 'Copperplate Gothic Lights';
+	src: 
+      url('Copperplate Gothic Light Regular.ttf') 
+		format('truetype');
+}
+
+body, html {
+   margin: 0;
+   padding: 0;
+   font-family: 'Copperplate Gothic Lights';
+   color: white;
+   text-align: center;
+}
+
+.bg {
+   position: fixed;
+   /* Full height */
+   height: 100%; 
+   width: 100%;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   animation-fill-mode: forwards;
+
+   z-index: -1;
+}
+
+.main-window {
+   /*when you have additional events:*/
+   min-height: 100%;
+   /*min-height: 100%;*/
+   display: flex;
+   flex-direction: column;
+}
+
+.main-display {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   min-height: 100%;
+   width: 100%;
+   margin: auto;
+}
+
+.main-content {
+   margin: auto;
+   background-color: rgba(107, 107, 107, 0.562)
+}
+
+.title {
+   font-size: 50pt;
+   text-decoration: underline;
+}
+
+.heading {
+   font-size: 20pt;
+}
+
+.footer {
+   background-color: rgba(107, 107, 107, 0.562)
+}
+
+p {
+   margin-bottom: 0.5rem;
+}
+
+/*child first only*/
+#mc_calendar .fc-view-container
+{
+   background-color: #16141442
+}
+#mc_calendar .fc-today
+{
+   background-color: #ececec5e
+}
+
+@keyframes bgfadein {
+   0%   { opacity: 0; }
+   100% { opacity: 1; }
+ }
+
+ @keyframes bgfadeout {
+   0%   { opacity: 1; }
+   100% { opacity: 0; }
+ }
