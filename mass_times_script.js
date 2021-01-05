@@ -187,7 +187,7 @@ function load_mass_times() {
     
             }
             try {
-              scr1.innerHTML = days[mass_date.getDay()] + " " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + "@ 11AM";
+              scr1.innerHTML = days[mass_date.getDay()] + " " + months[mass_date.getMonth()] + " " + DateString(mass_date.getDate()) + "@ 12PM";
               scr2.innerHTML = " in " + room_name;
             }
             catch(err){
